@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- displays site properly based on user's device -->
 
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Outfit:wght@100..900&family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <link
       rel="icon"
       type="image/png"
@@ -25,22 +32,113 @@
         color: hsl(228, 45%, 44%);
       }
 
+      /* root */
+      :root {
+        --Yellow: hsl(47, 88%, 63%);
+        --White: hsl(0, 0%, 100%);
+        --Gray-500: hsl(0, 0%, 42%);
+        --Gray-950: hsl(0, 0%, 7%);
+        --Figtree: "Figtree", sans-serif;
+      }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      html {
+        font-size: 62.5%;
+      }
+
       body {
         display: flex;
         flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        justify-content: center;
+        align-items: center;
+
+        background-color: var(--Yellow);
+        color: var(--Gray-500);
+        font-family: var(--Figtree);
+        font-size: 1.5rem;
+        font-weight: 500;
+      }
+      .card {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+
+        max-width: 384px;
+        padding: 2rem;
+
+        border-radius: 15px;
+        border: 1px solid var(--Gray-950);
+        box-shadow: 6px 6px 0px var(--Gray-950);
+        background-color: var(--White);
+      }
+
+      .featured-image {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+      }
+
+      .tags span {
+        padding: 0.5rem 1rem;
+        border-radius: 3px;
+
+        background-color: var(--Yellow);
+        color: var(--Gray-950);
+        font-size: 1.3rem;
+        font-weight: 800;
+      }
+      .date-published {
+        font-size: 1.3rem;
+      }
+      .card h3 {
+        color: var(--Gray-950);
+        font-size: 2rem;
+        font-weight: 800;
+      }
+
+      .author {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+      }
+
+      .author img {
+        max-width: 3rem;
+      }
+
+      .author span {
+        font-size: 1.4rem;
+        font-weight: 800;
+        color: var(--Gray-950);
       }
     </style>
   </head>
   <body>
-    Learning Published 21 Dec 2023 HTML & CSS foundations These languages are
-    the backbone of every website, defining structure, content, and
-    presentation. Greg Hooper
+    <article class="card">
+      <img
+        class="featured-image"
+        src="./assets/images/illustration-article.svg"
+        alt=""
+      />
+      <div class="tags">
+        <span>Learning</span>
+      </div>
+      <p class="date-published">Published 21 Dec 2023</p>
+      <h3>HTML & CSS foundations</h3>
+      <p>
+        These languages are the backbone of every website, defining structure,
+        content, and presentation.
+      </p>
 
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Ziggy Kerckenaere</a>.
-    </div>
+      <p class="author">
+        <img src="./assets/images/image-avatar.webp" alt="Greg Hooper foto" />
+        <span>Greg Hooper</span>
+      </p>
+    </article>
   </body>
 </html>
